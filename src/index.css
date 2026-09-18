@@ -1,0 +1,71 @@
+:root {
+  font-family: "Trebuchet MS", Arial, sans-serif;
+  color: #243247;
+  background: #f4f7fb;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: #f4f7fb;
+  background-attachment: fixed;
+}
+
+#root { min-height: 100vh; }
+
+.app {
+  width: min(100% - 32px, 900px);
+  margin: 0 auto;
+  padding: 32px 0;
+}
+
+.page-header { margin-bottom: 28px; }
+.page-header h1 { margin: 4px 0 8px; font-size: clamp(2rem, 5vw, 3rem); color: #17243a; }
+.page-header p { margin: 0; color: #64748b; }
+.eyebrow { font-size: 0.75rem; font-weight: bold; letter-spacing: 0.12em; color: #2563eb !important; }
+
+.student-form,
+.search-bar,
+.student-card {
+  background: #fff;
+  border: 1px solid #dbe3ee;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(37, 65, 100, 0.06);
+}
+
+.student-form { display: grid; gap: 7px; padding: 18px; }
+.student-form h2 { margin: 0 0 8px; color: #17243a; }
+.student-form label { font-size: 0.85rem; font-weight: bold; color: #52637a; }
+input, select, button { font: inherit; }
+input, select { width: 100%; padding: 9px 11px; border: 1px solid #cbd5e1; border-radius: 5px; color: #243247; background: #fff; }
+input:focus, select:focus { outline: 2px solid #93c5fd; border-color: #2563eb; }
+.student-form button { margin-top: 8px; }
+button { padding: 10px 16px; border: 0; border-radius: 5px; color: #fff; background: #2563eb; cursor: pointer; }
+button:hover { background: #1d4ed8; }
+.student-form button[type="button"] { color: #243247; background: #e2e8f0; }
+.student-form p { color: #b42318; margin: 4px 0; }
+
+.student-count { margin: 28px 0 12px; color: #17243a; }
+.search-bar { display: grid; grid-template-columns: 2fr 1fr; gap: 10px; padding: 12px; margin-bottom: 14px; }
+.student-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; }
+.student-card { padding: 14px; }
+.student-card h3 { margin: 0 0 12px; color: #17243a; }
+.student-card p { margin: 6px 0; color: #64748b; }
+.student-card button { margin: 14px 8px 0 0; padding: 8px 12px; }
+
+/* Keep many records compact so the list stays easy to scan. */
+.students-many .student-list { grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 8px; }
+.students-many .student-card { padding: 11px; }
+.students-many .student-card h3 { margin-bottom: 8px; font-size: 1rem; }
+.students-many .student-card p { margin: 3px 0; font-size: 0.9rem; }
+.students-many .student-card button { margin-top: 8px; padding: 6px 9px; font-size: 0.85rem; }
+
+@media (max-width: 600px) {
+  .app { width: min(100% - 20px, 900px); padding: 24px 0; }
+  .search-bar { grid-template-columns: 1fr; }
+}
